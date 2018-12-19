@@ -3,19 +3,19 @@ services:
   - docker
 
 before_install:
-  - docker build -t igorzi84/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t igorz/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run igorzi84/react-test npm test -- --coverage
+  - docker run igorz/react-test npm test -- --coverage
 
 after_success:
-  - docker build -t igorzi84/multi-client ./client
-  - docker build -t igorzi84/multi-nginx ./nginx
-  - docker build -t igorzi84/multi-server ./server
-  - docker build -t igorzi84/multi-worker ./worker
+  - docker build -t igorz/multi-client ./client
+  - docker build -t igorz/multi-nginx ./nginx
+  - docker build -t igorz/multi-server ./server
+  - docker build -t igorz/multi-worker ./worker
   
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push igorzi84/multi-client
-  - docker push igorzi84/multi-nginx
-  - docker push igorzi84/multi-server
-  - docker push igorzi84/multi-worker
+  - docker push igorz/multi-client
+  - docker push igorz/multi-nginx
+  - docker push igorz/multi-server
+  - docker push igorz/multi-worker
