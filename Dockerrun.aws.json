@@ -24,7 +24,7 @@
         },
         {
             "name": "nginx",
-            "image": "igorz/nginx",
+            "image": "igorz/multi-nginx",
             "essential": true,
             "portMappings": [
                 {
