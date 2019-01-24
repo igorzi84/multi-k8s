@@ -1,0 +1,11 @@
+sudo: required
+services:
+  - docker
+before_install:
+  #Install GCP sdk 
+  - curl https://sdk.cloud.com | bash > /dev/null;
+  - source $HOME/google-cloud-sdk/path.bash.inc
+  #Install kubectl
+  - gcloud components update kubectl
+  #Authenticate to GCP
+  - gcloud auth activate-service-account --key-file service-account.json
