@@ -10,7 +10,7 @@ before_install:
   #Decrypt encrypted service account json
   - openssl aes-256-cbc -K $encrypted_0c35eebf403c_key -iv $encrypted_0c35eebf403c_iv -in multi-k8s-229601-2e717000b851.json.enc -out multi-k8s-229601-2e717000b851.json -d
   #Install GCP sdk 
-  - curl https://sdk.cloud.com | bash > /dev/null;
+  - curl https://sdk.cloud.google.com | bash > /dev/null;
   - source $HOME/google-cloud-sdk/path.bash.inc
   #Install kubectl
   - gcloud components update kubectl
