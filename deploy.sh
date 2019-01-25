@@ -11,6 +11,6 @@ docker push igorz/multi-server:$SHA
 docker push igorz/multi-worker:$SHA
 
 kubectl apply -f k8s
-kubectl set image depoloyments/server-deployment server=igorz/multi-server:$SHA
-kubectl set image depoloyments/client-deployment server=igorz/multi-client:$SHA
-kubectl set image depoloyments/worker-deployment server=igorz/multi-worker:$SHA
+kubectl set image deployments/server-deployment server=igorz/multi-server:$SHA
+kubectl set image deployments/client-deployment server=igorz/multi-client:$SHA
+kubectl set image deployments/worker-deployment server=igorz/multi-worker:$SHA
